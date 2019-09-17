@@ -17,6 +17,17 @@
         content.title = "Weekly Staff Meeting"
         content.body = "Every Tuesday at 2pm"
 
+        // Configure the recurring date.
+        var dateComponents = DateComponents()
+        dateComponents.calendar = Calendar.current
+
+        dateComponents.weekday = 3  // Tuesday
+        dateComponents.hour = 14    // 14:00 hours
+
+        // Create the trigger as a repeating event.    
+        let trigger = UNCalendarNotificationTrigger(
+                dateMatching: dateComponents, repeats: true)
+
       result(strNative);
       } else {
         result(FlutterMethodNotImplemented);
