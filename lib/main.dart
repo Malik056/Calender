@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   //Calling Function from Native Code
   Future<void> createBackgroundService() async {
     try{
-      final dynamic ob = await platform.invokeMethod('craeteBackgroudService');
+      final dynamic ob = await platform.invokeMethod('createEventNotification');
     } on PlatformException catch (e) {
       print('Error Code: ${e.code}\nError Message: ${e.message}\nError Details: ${e.details}');
     }
